@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
 
-function Person(props) {
+function Person({ id, image, name, title, quote, prevClick, nextClick }) {
   return (
     <div className="row" style={{ width: "60vw", padding: "0px 20px" }}>
       <div className="col-sm-12 text-center" style={{ width: "100%" }}>
@@ -12,8 +12,8 @@ function Person(props) {
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
           <img
-            src="https://www.gettyimages.fr/gi-resources/images/500px/983794168.jpg"
-            alt=""
+            src={image}
+            alt={name}
             className="rounded-circle img-fluid"
             style={{ width: "150px", height: "150px" }}
           />
@@ -28,21 +28,24 @@ function Person(props) {
         }}
       >
         <div>
-          <FiChevronLeft className="navigationButton" />
+          <FiChevronLeft
+            className="navigationButton"
+            onClick={() => prevClick(id)}
+          />
         </div>
         <div className="d-flex justify-content-center align-items-center flex-column">
-          <h4>Mgbams Kingsley</h4>
-          <span>Office Manager</span>
+          <h4 className="name">{name}</h4>
+          <span>{title}</span>
         </div>
         <div>
-          <FiChevronRight className="navigationButton" />
+          <FiChevronRight
+            className="navigationButton"
+            onClick={() => nextClick(id)}
+          />
         </div>
       </div>
       <div className="row mt-3 description">
-        <p className="text-center">
-          Fingerstache umami squid, kinfolk subway tile selvage tumblr man braid
-          viral kombucha gentrify fanny pack raclette pok pok mustache.
-        </p>
+        <p className="text-center">{quote}</p>
         <div className="mt-3">
           <FaQuoteRight className="quoteIcon" />
         </div>
