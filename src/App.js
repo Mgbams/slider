@@ -4,7 +4,7 @@ import Slider from "./component";
 
 function App() {
   return (
-    <div>
+    <div className="container mt-5 d-flex justify-content-center align-items:center">
       <Slider />
     </div>
   );
