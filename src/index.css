@@ -4,6 +4,7 @@
   --color-body-background: #f1f5f8;
   --image-border-color: #bcccdc;
   --color-title: #994314;
+  --transition: all 0.3s linear;
 }
 body {
   margin: 0;
@@ -26,15 +27,36 @@ code {
   background-color: var(--color-background-button);
   border-radius: 15%;
 }
+.main-container {
+  position: relative;
+  transition: all 0.3s linear;
+}
+.next-prev-icons {
+  position: absolute;
+  top: 220px;
+  /* border: 1px solid green; */
+  width: 90% !important;
+}
+/* .main-container {
+  border: 2px solid red;
+} */
 .navigationButton:hover {
   background-color: var(--color-button-onhover);
+}
+.center-name {
+  width: 100%;
+  justify-content: center;
 }
 .description {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
+}
+.quote-text {
+  text-align: center;
+  width: 80%;
 }
 .quoteIcon {
   color: var(--color-button-onhover);
@@ -48,4 +70,13 @@ img {
 }
 .name {
   color: var(--color-title);
+}
+
+@media only screen and (max-width: 577px) {
+  .navigationButton {
+    font-size: 20px;
+  }
+  .center-name {
+    padding: 0px 0px 0px 35px !important;
+  }
 }
